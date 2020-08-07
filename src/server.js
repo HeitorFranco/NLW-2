@@ -23,12 +23,27 @@ const proffys = [
     }
 ]
 
+const subjects = [
+    "Artes","Biologia","Ciências","Educação física","Física",
+    "Geografia","História","Matemática","Português","Química",
+]
+
+const weekdays = [
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado",
+]
+
 function pageLanding(req, res) {
     return res.render("index.html")
 }
 function pageStudy(req, res) {
     const filters = req.query
-    return res.render("study.html",  { proffys, filters })
+    return res.render("study.html",  { proffys, filters, subjects, weekdays })
 }
 function pageGiveClasses(req, res) {
     return res.render("give-classes.html")
@@ -37,7 +52,7 @@ function pageGiveClasses(req, res) {
 const express = require('express')
 const server = express()
 
-
+//configurar nunjucks(template engine)
 const nunjucks = require("nunjucks")
 nunjucks.configure("src/views", {
     express: server,
