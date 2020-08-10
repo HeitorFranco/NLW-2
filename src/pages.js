@@ -1,5 +1,4 @@
 const Database = require("./database/db")
-var queryString
 
 const {subjects, weekdays, getSubject, convertHoursToMinutes} = require("./utils/format")
 
