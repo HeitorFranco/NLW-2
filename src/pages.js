@@ -1,4 +1,5 @@
 const Database = require("./database/db")
+var queryString
 
 const {subjects, weekdays, getSubject, convertHoursToMinutes} = require("./utils/format")
 
@@ -81,15 +82,19 @@ async function saveClasses(req, res){
         const db = await Database
         await createProffy(db, { proffyValue, classValue, classScheduleValues })
         
-        let queryString = "?subject=" + req.body.subject
+        queryString = "?subject=" + req.body.subject
         queryString += "&weekday=" + req.body.weekday[0]
         queryString += "&time=" + req.body.time_from[0]
+        
+        /*setTimeout( ()=>{
+            return res.redirect("/sucess")
+        },2000)*/
 
-        return res.redirect("/study" + queryString)
+        //return res.redirect("/sucess" + queryString)
     } catch (error) {
         console.log(error)
     }
-
+    
 
 
     
@@ -100,5 +105,6 @@ module.exports = {
     pageLanding,
     pageStudy,
     pageGiveClasses,
-    saveClasses
+    saveClasses,
+    queryString
 }

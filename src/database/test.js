@@ -66,3 +66,5 @@ Database.then(async function(db){
 
     // console.log(selectClassesSchedules)
 })
+
+console.log("pi´´fehwjweofnqfefwfeqwfqwfqwfqewfwfwqffeqwf")

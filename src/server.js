@@ -19,4 +19,7 @@ server
 .get("/study", pageStudy)
 .get("/give-classes", pageGiveClasses)
 .post("/save-classes", saveClasses)
+.get("/sucess", (req, res) => {
+    return res.render("sucess.html")
+})
 .listen(5500)
