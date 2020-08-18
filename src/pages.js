@@ -81,7 +81,7 @@ async function saveClasses(req, res){
         const db = await Database
         await createProffy(db, { proffyValue, classValue, classScheduleValues })
         
-        queryString = "?subject=" + req.body.subject
+        var queryString = "?subject=" + req.body.subject
         queryString += "&weekday=" + req.body.weekday[0]
         queryString += "&time=" + req.body.time_from[0]
         
@@ -89,7 +89,7 @@ async function saveClasses(req, res){
             return res.redirect("/sucess")
         },2000)*/
 
-        //return res.redirect("/sucess" + queryString)
+        return res.redirect("/study" + queryString)
     } catch (error) {
         console.log(error)
     }
@@ -105,5 +105,4 @@ module.exports = {
     pageStudy,
     pageGiveClasses,
     saveClasses,
-    queryString
 }

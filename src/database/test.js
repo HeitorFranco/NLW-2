@@ -50,7 +50,7 @@ Database.then(async function(db){
         WHERE classes.proffy_id = 1;
     `)
 
-    // console.log(selectedClassesAndProffys)
+    console.log(selectedClassesAndProffys)
 
     // o horário que a pessoa trabalha, por exemplo, é des 8h - 18h
     // o horário do time_from (8) precisa ser menor ou igual ao horário solicitado
@@ -67,4 +67,4 @@ Database.then(async function(db){
     // console.log(selectClassesSchedules)
 })
 
-console.log("pi´´fehwjweofnqfefwfeqwfqwfqwfqewfwfwqffeqwf")
+//console.log("pi´´fehwjweofnqfefwfeqwfqwfqwfqewfwfwqffeqwf")
